@@ -1,0 +1,38 @@
+@import "position";
+@import "display";
+@import "text";
+
+//Other Utilities Classes
+.rounded {
+  border-radius: 4px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+//Images
+.img-responsive {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+

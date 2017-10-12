@@ -1,0 +1,290 @@
+.form-item {
+  margin-bottom: 20px;
+}
+
+input, textarea, select {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  height: 40px;
+  outline: none;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  box-shadow: none;
+  padding: 0 12px;
+
+  &:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #1c86f2;
+    box-shadow: 0 0 1px #1c86f2 inset;
+  }
+}
+
+label {
+  display: block;
+  color: #313439;
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 600;
+
+  &.checkbox,
+  .desc,
+  .success,
+  .error {
+    text-transform: none;
+    font-weight: normal;
+  }
+
+  &.checkbox {
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    color: inherit;
+
+    input {
+      margin-top: 0;
+    }
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0.15rem;
+  font-size: 115%;
+  margin-right: 3px;
+}
+
+textarea {
+  height: auto;
+  padding: 8px 12px;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+.form-buttons button,
+.form-buttons .button {
+  margin-right: 10px;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &:hover input ~ .control__indicator,
+  input:focus ~ .control__indicator {
+    background: #ccc;
+  }
+
+  input:checked ~ .control__indicator {
+    background: #007FFF;
+  }
+
+  &:hover input:not([disabled]):checked ~ .control__indicator,
+  input:checked:focus ~ .control__indicator {
+    background: darken(#007FFF, 10%);
+  }
+
+  input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  input:checked ~ .control__indicator:after {
+    display: block;
+  }
+}
+
+//Radio-button
+.control--radio {
+  .control__indicator {
+    border-radius: 50%;
+  }
+
+  .control__indicator{
+    &:after {
+      left: 7px;
+      top: 7px;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+  }
+
+  input:disabled ~ .control__indicator:after {
+    background: #7b7b7b;
+  }
+}
+
+//Checkbox-button
+.control--checkbox {
+  .control__indicator {
+    border-radius: 2px;
+  }
+
+  .control__indicator {
+    &:after {
+      left: 7px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+  }
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    background: #e6e6e6;
+    color: #7b7b7b;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:hover, &:focus {
+      color: #000;
+      background: #ccc;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #7b7b7b transparent transparent transparent;
+  }
+
+  select:hover ~ .select__arrow,
+  select:focus ~ .select__arrow {
+    border-top-color: #000;
+  }
+
+  select:disabled ~ .select__arrow {
+    border-top-color: #ccc;
+  }
+}
+
+div.desc {
+  margin-top: 4px;
+  margin-bottom: -8px;
+}
+
+.desc {
+  color: rgba(49, 52, 57, 0.5);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.required {
+  position: relative;
+  top: 1px;
+  font-weight: bold;
+  color: #f03c69;
+  font-size: 110%;
+}
+
+.form span.success,
+.form span.error {
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 4px;
+}
+
+label.checkbox,
+label .desc,
+label .success,
+label .error {
+  text-transform: none;
+  font-weight: normal;
+}
+
+//Success-state
+.success {
+  color: #388E3C;
+}
+
+input.success,
+textarea.success,
+select.success {
+  background-color: rgba(53, 190, 177, 0.1);
+  border: 1px solid #39bb3f;
+}
+
+//Error-state
+.error {
+  color: #d32f2f;
+}
+
+input.error,
+textarea.error,
+select.error {
+  background-color: rgba(240, 60, 105, 0.1);
+  border: 1px solid #ea5f5f;
+}
+
+

@@ -1,0 +1,160 @@
+.parallax {
+  display: block;
+  height: auto;
+  position: relative;
+  width: auto;
+
+  @include e ('content') {
+    box-shadow: 0 32px 60px rgba(69, 77, 93, .3);
+    height: auto;
+    transform: perspective(1600px);
+    transform-style: preserve-3d;
+    transition: all .4s ease;
+    width: 100%;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      background: transparent;
+      transition: all .4s ease;
+      width: 100%;
+    }
+  }
+
+  @include e ('front') {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 3rem rgba(69, 77, 93, .95);
+    top: 0;
+    transform: translateZ(16px) scale(.9);
+    transition: all .4s ease;
+    width: 100%;
+    z-index: 1;
+
+    h2 {
+      color: #fff;
+    }
+  }
+
+  @include e ('top') {
+    @include m ('left') {
+      height: 50%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 50%;
+      z-index: 300;
+      cursor: pointer;
+
+      &:hover ~ .parallax__content {
+        transform: perspective(1600px) rotateX(-5deg) rotateY(5deg);
+        &:before {
+          background: linear-gradient(
+                          135deg,
+                          rgba(255, 255, 255, .25) 0%,
+                          rgba(255, 255, 255, 0) 50%
+          );
+          transition: all .4s ease;
+        }
+
+        .parallax__front {
+          transform: translate3d(-.10px, -.10px, 16px) scale(.9);
+        }
+      }
+    }
+  }
+
+  @include e ('top') {
+    @include m ('right') {
+      height: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      z-index: 300;
+      cursor: pointer;
+
+      &:hover ~ .parallax__content {
+        transform: perspective(1600px) rotateX(-5deg) rotateY(-5deg);
+        &:before {
+          background: linear-gradient(
+                          -135deg,
+                          rgba(255, 255, 255, .25) 0%,
+                          rgba(255, 255, 255, 0) 50%
+          );
+          transition: all .4s ease;
+        }
+
+        .parallax__front {
+          transform: translate3d(.10px, -.10px, 16px) scale(.9);
+        }
+      }
+    }
+  }
+
+  @include e ('bottom') {
+    @include m ('left') {
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      width: 50%;
+      z-index: 300;
+      cursor: pointer;
+
+      &:hover ~ .parallax__content {
+        transform: perspective(1600px) rotateX(5deg) rotateY(5deg);
+
+        &:before {
+          background: linear-gradient(
+                          45deg,
+                          rgba(255, 255, 255, .25) 0%,
+                          rgba(255, 255, 255, 0) 50%
+          );
+          transition: all .4s ease;
+        }
+
+        .parallax__front {
+          transform: translate3d(-.10px, .10px, 16px) scale(.9);
+        }
+      }
+    }
+  }
+
+  @include e ('bottom') {
+    @include m ('right') {
+      bottom: 0;
+      height: 50%;
+      position: absolute;
+      right: 0;
+      width: 50%;
+      z-index: 300;
+      cursor: pointer;
+
+      &:hover ~ .parallax__content {
+        transform: perspective(1600px) rotateX(5deg) rotateY(-5deg);
+
+        &:before {
+          background: linear-gradient(
+                          -45deg,
+                          rgba(255, 255, 255, .25) 0%,
+                          rgba(255, 255, 255, 0) 50%
+          );
+          transition: all .4s ease;
+        }
+        .parallax__front {
+          transform: translate3d(.10px, .10px, 16px) scale(.9);
+        }
+      }
+    }
+  }
+}

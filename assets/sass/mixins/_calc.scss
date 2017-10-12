@@ -1,0 +1,13 @@
+@mixin calc($prop, $val) {
+  #{$prop}: calc(#{$val});
+}
+
+//SCSS
+.example-calc {
+  @include calc(width, '100% - 20px');
+}
+
+//CSS
+.example-calc {
+  width: calc(100% - 20px);
+}

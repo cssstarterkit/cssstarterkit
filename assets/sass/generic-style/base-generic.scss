@@ -1,0 +1,26 @@
+//Custom-google-fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+/* Remove padding and margin */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font: normal 16px/1.5 $base-font-family;
+  color: $base-color;
+  background: $main-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
