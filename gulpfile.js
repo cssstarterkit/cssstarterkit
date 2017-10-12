@@ -5,8 +5,8 @@ require('laravel-elixir-postcss');
 
 elixir(function (mix) {
 
-    mix.sass('./assets/sass/app.scss', './dist/css/postcss/')
-        .postcss('app.css', {
+    mix.sass('./assets/sass/app.scss', './dist/css/postcss/app.min.css')
+        .postcss('app.min.css', {
             plugins: [
                 require('lost')
             ],
@@ -15,12 +15,11 @@ elixir(function (mix) {
         })
         .styles([
             './assets/sass/vendor/normalize.css'
-        ], './dist/css/vendor.css');
+        ], './dist/css/vendor.min.css');
 
-    mix.scripts('./assets/js/script.js', './public/js/app.js')
-
+    mix.scripts('./assets/js/script.js', './dist/js/app.min.js')
     mix.scripts([
         './assets/js/vendor/jquery-3.2.1.min.js',
         './assets/js/vendor/modernizr-2.8.3.min.js'
-    ], './dist/js/vendor.js')
+    ], './dist/js/vendor.min.js')
 });
