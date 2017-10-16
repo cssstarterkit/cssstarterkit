@@ -77,8 +77,6 @@ $(document).ready(function () {
         return $('#plain-dropdown-menu').removeClass('open');
     });
 
-
-
     //Select-Dropdown
     var $html = $('html');
     $html.on('click.ui.select-dropdown', '.js-select-dropdown', function (e) {

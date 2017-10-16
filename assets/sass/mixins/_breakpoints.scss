@@ -1,51 +1,34 @@
 //Breakpoint-mixin
 
-@mixin bp-extra-large {
-  @media only screen and (min-width: 1600px) {
-    @content;
-  }
-}
+$breakpoints: (
+        "phone":        400px,
+        "phone-wide":   480px,
+        "phablet":      560px,
+        "tablet-small": 640px,
+        "tablet":       768px,
+        "tablet-wide":  1024px,
+        "desktop":      1248px,
+        "desktop-wide": 1440px
+);
 
-@mixin bp-large {
-  @media only screen and (min-width: 1170px) {
-    @content;
-  }
-}
-
-@mixin bp-medium {
-  @media only screen and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin bp-small {
-  @media only screen and (min-width: 320px) {
-    @content;
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
   }
 }
 
 //Example
-.example-sidebar {
-  width: 60%;
-  float: left;
-  margin: 0 2% 0 0;
-  @include bp-small {
-    width: 100%;
-    float: none;
-    margin: 0;
-  }
-}
-
-//CSS
-.example-sidebar {
-  width: 60%;
-  float: left;
-  margin: 0 2% 0 0;
-  @media only screen and (min-width: 320px) {
-    .sidebar {
-      width: 100%;
-      float: none;
-      margin: 0;
-    }
+.example-header {
+  padding: 20px;
+  font-size: 16px;
+  @include mq('tablet-wide') {
+    padding-top: 30px;
+    font-size: 22px;
   }
 }
