@@ -1,5 +1,4 @@
 //Breakpoint-mixin
-
 $breakpoints: (
         "phone":        400px,
         "phone-wide":   480px,
@@ -24,11 +23,11 @@ $breakpoints: (
 }
 
 //Example
-.example-header {
-  padding: 20px;
-  font-size: 16px;
-  @include mq('tablet-wide') {
-    padding-top: 30px;
-    font-size: 22px;
-  }
-}
+//.example-header {
+//  padding: 20px;
+//  font-size: 16px;
+//  @include mq('tablet-wide') {
+//    padding-top: 30px;
+//    font-size: 22px;
+//  }
+//}

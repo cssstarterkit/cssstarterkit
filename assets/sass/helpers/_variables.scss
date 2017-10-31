@@ -1,6 +1,8 @@
 //Color-palette
-$black: #333;
+$black: #000;
+$light-black: #333;
 $grey: #ccc;
+$dark-grey: #4a4a4a;
 $light-grey: #d4d4d4;
 $white: #fff;
 $yellow: #ff0;
@@ -12,7 +14,7 @@ $purple: #9c27b0;
 $light-purple: #efedff;
 
 // Base-colors
-$base-color: $black;
+$base-color: $light-black;
 $brand-color: $blue;
 $secondary-color: $grey;
 $text_color: $base-color;
@@ -35,18 +37,6 @@ $button-padding-horizontal: 15px;
 
 // Typography
 $base-font-family: 'Roboto', sans-serif;
-
-// Font Sizes
-$base-font-size: 14px;
-
-// Line height
-$base-line-height: 1.5;
-
-// Header
-$header-background-color: $brand-color;
-
-// Footer
-$footer-background-color: #aaa;
 
 // Tooltips
 //Primary-color

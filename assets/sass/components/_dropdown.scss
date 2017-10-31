@@ -1,10 +1,6 @@
-/**
- * Component: Dropdown
- * --------------------------------------------------
- */
-//Plain-Dropdown
 
-.plain-dropdown {
+//Plain-Dropdown
+.dropdown {
   display: inline-block;
   position: relative;
 
@@ -20,7 +16,7 @@
   }
 }
 
-#plain-dropdown-menu {
+#dropdown-menu {
   position: absolute;
   top: 100%;
   background: #fff;
@@ -38,18 +34,18 @@
   z-index: 10;
 }
 
-#plain-dropdown-menu.open {
+#dropdown-menu.open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   transition: all 0.25s ease-in-out;
 }
 
-#plain-dropdown-menu li:hover {
+#dropdown-menu li:hover {
   background: darken(#fff, 10%);
 }
 
-#plain-dropdown-menu a {
+#dropdown-menu a {
   display: block;
   padding: 10px;
   color: #000;

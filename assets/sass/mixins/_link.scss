@@ -4,26 +4,27 @@ $a-link: 'a';
 $a-link-hover: 'a:hover,a:focus';
 
 #{$a-link} {
-  color: $white;
+  display: inline-block;
+  color: $dark-grey;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 
 #{$a-link-hover} {
-  color: grey;
+  color: darken($dark-grey, 10%);
   transition: all 0.3s ease-in-out;
 }
 
-.example-link-element {
-  a{
-    transition: all 0.3s linear;
-    text-decoration: none;
-  }
-
-  #{$a-link} {
-    color: $dark-pink;
-  }
-  #{$a-link-hover} {
-    color: $orange;
-  }
-}
+//.example-link-element {
+//  a{
+//    transition: all 0.3s linear;
+//    text-decoration: none;
+//  }
+//
+//  #{$a-link} {
+//    color: $dark-pink;
+//  }
+//  #{$a-link-hover} {
+//    color: $orange;
+//  }
+//}

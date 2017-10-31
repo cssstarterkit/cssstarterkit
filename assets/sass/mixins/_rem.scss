@@ -11,10 +11,10 @@
 }
 
 //Example
-.example-p {
-  @include font-size(14px)
-}
-.example-p {
-  font-size: 14px; //Will be overridden if browser supports rem
-  font-size: 0.8rem;
-}
+//.example-p {
+//  @include font-size(14px)
+//}
+//.example-p {
+//  font-size: 14px; //Will be overridden if browser supports rem
+//  font-size: 0.8rem;
+//}

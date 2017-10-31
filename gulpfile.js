@@ -23,6 +23,8 @@ elixir(function (mix) {
         './assets/js/vendor/jquery-3.2.1.min.js',
         './assets/js/vendor/modernizr-2.8.3.min.js',
         './assets/js/vendor/accordion-js/accordion.js',
-        './assets/js/vendor/modaal-js/modaal.min.js'
+        './assets/js/vendor/modaal-js/modaal.min.js',
+        './assets/js/vendor/dropdown/dropdown.js',
+        './assets/js/vendor/dropdown/select-dropdown.js'
     ], './dist/js/vendor.min.js')
 });

@@ -11,16 +11,16 @@
 }
 
 //Example
-.example-block-center {
-  @include box-center;
-}
+//.example-block-center {
+//  @include box-center;
+//}
 
 //CSS
-.example-block-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+//.example-block-center {
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//}
 
 //Box-center-translate-mixin
 @mixin center-translate($direction: both) {
@@ -39,15 +39,15 @@
 }
 
 //Example
-.example-block-center-translate{
-   @include center-translate;
- }
+//.example-block-center-translate {
+//  @include center-translate;
+//}
 
 //CSS
-.example-block-center-translate {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
+//.example-block-center-translate {
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate3d(-50%, -50%, 0);
+//}
 
